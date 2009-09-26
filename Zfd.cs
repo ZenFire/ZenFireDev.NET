@@ -13,7 +13,6 @@ namespace ZenFireDev
     {
         ZenFire.Connection zf;
         AccountEventWindow aew;
-        PositionEventWindow pew;
 
         public Zfd(ZenFire.Connection z)
         {
@@ -37,21 +36,13 @@ namespace ZenFireDev
          
         private void accountEventButton_Click_1(object sender, EventArgs e)
         {
-            PlaceOrderWindow pow = new PlaceOrderWindow(zf);
-            pow.Show();
+            new PlaceOrderWindow(zf).Show();
 
-        }
-
-        private void positionEventButton_Click(object sender, EventArgs e)
-        {
-            pew = new PositionEventWindow(zf);
-            pew.Show();
         }
 
         private void positionEventWatcherToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pew = new PositionEventWindow(zf);
-            pew.Show();
+            new PositionEventWindow(zf).Show();
         }
 
         private void orderEventWatcherToolStripMenuItem_Click(object sender, EventArgs e)
