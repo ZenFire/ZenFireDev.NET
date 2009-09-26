@@ -16,7 +16,7 @@ namespace ZenFireDev
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            ZenFire.Connection zf = new ZenFire.Connection("../../../../cert");
+            ZenFire.Connection zf = new ZenFire.Connection("../../cert");
             zf.SetOption("intraday_tick", 1);
             Application.Run(new Login(zf));
             if (zf.IsConnected())
