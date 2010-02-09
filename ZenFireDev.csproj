@@ -13,6 +13,21 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>zenfire.ico</ApplicationIcon>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,9 +62,13 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="zenfire, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="zenfire, Version=1.0.11.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\zenfire.dll</HintPath>
+      <HintPath>..\Documents and Settings\szidaru\Desktop\zenfire-1.0.11.0\zenfire-1.0.11.0\lib\zenfire.dll</HintPath>
+    </Reference>
+    <Reference Include="zfd.vshost, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\zfd.vshost.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -65,11 +84,41 @@
     <Compile Include="AccountEventWindow.Designer.cs">
       <DependentUpon>AccountEventWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AccountSummaryEventWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountSummaryEventWindow.Designer.cs">
+      <DependentUpon>AccountSummaryEventWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AlertEventWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AlertEventWindow.Designer.cs">
       <DependentUpon>AlertEventWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompletedOrdersEventWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompletedOrdersEventWindow.Designer.cs">
+      <DependentUpon>CompletedOrdersEventWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenOrdersEventWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenOrdersEventWindow.Designer.cs">
+      <DependentUpon>OpenOrdersEventWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PositionDetailsEventWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PositionDetailsEventWindow.Designer.cs">
+      <DependentUpon>PositionDetailsEventWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteBoardEventWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuoteBoardEventWindow.Designer.cs">
+      <DependentUpon>QuoteBoardEventWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="TickEventWindow.cs">
       <SubType>Form</SubType>
@@ -116,8 +165,23 @@
     <EmbeddedResource Include="AccountEventWindow.resx">
       <DependentUpon>AccountEventWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AccountSummaryEventWindow.resx">
+      <DependentUpon>AccountSummaryEventWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AlertEventWindow.resx">
       <DependentUpon>AlertEventWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompletedOrdersEventWindow.resx">
+      <DependentUpon>CompletedOrdersEventWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenOrdersEventWindow.resx">
+      <DependentUpon>OpenOrdersEventWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PositionDetailsEventWindow.resx">
+      <DependentUpon>PositionDetailsEventWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuoteBoardEventWindow.resx">
+      <DependentUpon>QuoteBoardEventWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TickEventWindow.resx">
       <DependentUpon>TickEventWindow.cs</DependentUpon>
@@ -163,6 +227,38 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

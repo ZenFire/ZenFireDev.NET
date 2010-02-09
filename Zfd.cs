@@ -57,6 +57,36 @@ namespace ZenFireDev
             aew.Show();
         }
 
+        private void accountSummaryEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountSummaryEventWindow asew = new AccountSummaryEventWindow(zf);
+            asew.Show();
+        }
+
+        private void quoteBoardEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuoteBoardEventWindow qbew = new QuoteBoardEventWindow(zf);
+            qbew.Show();
+        }
+
+        private void positionDetailsEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PositionDetailsEventWindow pdew = new PositionDetailsEventWindow(zf);
+            pdew.Show();
+        }
+
+        private void openOrdersEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenOrdersEventWindow ooew = new OpenOrdersEventWindow(zf);
+            ooew.Show();
+        }
+
+        private void completedOrdersEventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompletedOrdersEventWindow coew = new CompletedOrdersEventWindow(zf);
+            coew.Show();
+        }
+         
         private void placeOrderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PlaceOrderWindow pow = new PlaceOrderWindow(zf);
@@ -91,6 +121,8 @@ namespace ZenFireDev
         {
             new AlertEventWindow(zf).Show();
         }
+
+        
 
 
     }
