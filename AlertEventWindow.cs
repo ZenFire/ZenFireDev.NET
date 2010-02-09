@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ZenFireDev
 {
@@ -31,7 +32,12 @@ namespace ZenFireDev
         {
             ZenFire.AlertType alert = e.Type;
             string[] row = { DateTime.Now.ToString(timeFmt), alert.ToString() };
-            this.Invoke(insertRow, new object[] { 0, row });
+            ThreadPool.QueueUserWorkItem(new WaitCallback(WorkerMethod), (object)row);
+        }
+
+        private void WorkerMethod(object obj)
+        {
+            this.Invoke(insertRow, new object[] { 0, obj });
         }
 
         void zf_AccountUpdate(object sender, ZenFire.AccountEventArgs e)

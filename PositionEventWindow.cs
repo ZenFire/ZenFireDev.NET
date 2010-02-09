@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ZenFireDev
 {
@@ -28,7 +29,12 @@ namespace ZenFireDev
         {
             ZenFire.IPosition pos = e.Position;
             string[] row = { pos.Account.ToString(), pos.Product.ToString(), pos.Size.ToString(), pos.OpenPL.ToString(), pos.ClosedPL.ToString()};
-            this.Invoke(insertRow, new object[] {0, row });
+            ThreadPool.QueueUserWorkItem(new WaitCallback(WorkerMethod), (object)row);
+        }
+
+        private void WorkerMethod(object obj)
+        {
+            this.Invoke(insertRow, new object[] { 0, obj });
         }
 
     }
